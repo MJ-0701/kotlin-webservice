@@ -9,21 +9,21 @@ spring:
       hibernate:
         format_sql: true
     generate-ddl: true
-    defer-datasource-initialization: true
+#    defer-datasource-initialization: true
 
   # DB 설정
-  h2:
-    console:
-      enabled: true
-    datasource:
-      hikari:
-        jdbc-url: jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
-        username : sa
+#  h2:
+#    console:
+#      enabled: true
+#    datasource:
+#      hikari:
+#        jdbc-url: jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
+#        username : sa
 
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/book_manager?useSSl=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    username: root
-#    password: root
+  datasource:
+    url: jdbc:mysql://localhost:3306/book_manager?useSSl=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
 
 
