@@ -1,9 +1,8 @@
 package com.example.kotlinwebservice.domain.user.domain
 
-import com.example.kotlinwebservice.domain.user.domain.dto.UserRequestDto
-import com.example.kotlinwebservice.domain.user.domain.repository.UserRepository
+import com.example.kotlinwebservice.domain.user.entity.User
+import com.example.kotlinwebservice.domain.user.entity.repository.UserRepository
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
