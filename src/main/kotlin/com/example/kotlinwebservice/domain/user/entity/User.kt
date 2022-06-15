@@ -2,11 +2,7 @@ package com.example.kotlinwebservice.domain.user.entity
 
 import com.example.kotlinwebservice.global.entity.BaseTimeEntity
 import com.fasterxml.jackson.annotation.JsonProperty
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 import javax.validation.constraints.Email
 
 @Entity
@@ -15,17 +11,33 @@ class User  (
     @field:Id
     @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     @field:Column(insertable = false, updatable = false)
-    private var id : Long? = null,
+    private val id : Long? = null,
 
-    private var name : String? = null,
+    var name : String,
 
 
     @field:JsonProperty("user_id")
-    private var userId : String? = null,
+    var userId : String,
 
-    private var pwd : String? = null,
+    var pwd : String,
 
     @field:Email
-    private var email : String? = null
+    var email : String,
+
+    var picture : String,
+
+    @field:Enumerated(EnumType.STRING)
+    @field:Column(nullable = false)
+    var role : Role
 
 ) : BaseTimeEntity()
+{
+    fun update(name : String, picture : String) : User{
+        this.name = name
+        this.picture = picture
+
+        return this
+    }
+
+    fun getRoleKey() : String = this.role.key
+}

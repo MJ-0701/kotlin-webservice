@@ -48,6 +48,11 @@ dependencies {
     //Swagger
     implementation("io.springfox:springfox-swagger-ui:2.9.2")
     implementation("io.springfox:springfox-swagger2:2.9.2")
+
+    // Security
+    implementation("org.springframework.boot:spring-boot-starter-oauth2-client") // 권한 관련
+    implementation("org.springframework.session:spring-session-jdbc") // 권한 관련
+    testImplementation("org.springframework.security:spring-security-test") // 권한 관련
 }
 
 tasks.withType<KotlinCompile> {
