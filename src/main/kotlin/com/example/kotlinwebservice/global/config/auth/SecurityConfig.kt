@@ -14,7 +14,7 @@ class SecurityConfig(private val customOAuth2UserService: CustomOAuth2UserServic
     override fun configure(http: HttpSecurity) {
         http.csrf().disable().headers().frameOptions().disable()
             .and().authorizeRequests()
-            .antMatchers("/", "/css/**", "/images/**","/js/**","/h2-console/**","/get/lottoCall","/profile", "/swagger-ui.html#/**").permitAll()
+            .antMatchers("/", "/css/**", "/images/**","/js/**","/h2-console/**","/profile","/swagger-ui.html#/**").permitAll()
 //            .antMatchers("/api/v1/**").hasRole(Role.USER.name)
             .anyRequest().authenticated()
             .and().logout().logoutSuccessUrl("/")

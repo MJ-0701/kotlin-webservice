@@ -1,5 +1,6 @@
 package com.example.kotlinwebservice.domain.user.entity
 
+import com.example.kotlinwebservice.domain.todo.entity.Todo
 import com.example.kotlinwebservice.global.entity.BaseTimeEntity
 import com.fasterxml.jackson.annotation.JsonProperty
 import javax.persistence.*
@@ -28,7 +29,13 @@ class User  (
 
     @field:Enumerated(EnumType.STRING)
     @field:Column(nullable = false)
-    var role : Role
+    var role : Role,
+
+    @field:OneToMany
+    var userHistory: MutableList<UserHistory>,
+
+    @field:OneToMany
+    var todo : MutableList<Todo>
 
 ) : BaseTimeEntity()
 {

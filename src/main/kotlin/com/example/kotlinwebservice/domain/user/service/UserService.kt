@@ -20,4 +20,9 @@ class UserService(private val userRepository: UserRepository,
         return modelMapper.map(result, UserReqDto::class.java)
     }
 
+    @Transactional
+    fun update(user: User) : User{
+        return userRepository.save(user)
+    }
+
 }

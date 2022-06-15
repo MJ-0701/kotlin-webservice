@@ -2,12 +2,14 @@ package com.example.kotlinwebservice.global.config.auth
 
 import com.example.kotlinwebservice.global.config.auth.dto.SessionUser
 import org.springframework.core.MethodParameter
+import org.springframework.stereotype.Component
 import org.springframework.web.bind.support.WebDataBinderFactory
 import org.springframework.web.context.request.NativeWebRequest
 import org.springframework.web.method.support.HandlerMethodArgumentResolver
 import org.springframework.web.method.support.ModelAndViewContainer
 import javax.servlet.http.HttpSession
 
+@Component
 class LoginUserArgumentResolver(private val httpSession: HttpSession) : HandlerMethodArgumentResolver {
 
 

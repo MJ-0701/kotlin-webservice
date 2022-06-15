@@ -1,12 +1,9 @@
 package com.example.kotlinwebservice.domain.todo.entity
 
+import com.example.kotlinwebservice.domain.user.entity.User
 import com.example.kotlinwebservice.global.entity.BaseTimeEntity
 import java.time.LocalDateTime
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
 class Todo (
@@ -16,7 +13,10 @@ class Todo (
     var id : Long? = null,
     var title : String? = null,
     var description : String? = null,
-    var schedule : LocalDateTime? = null
+    var schedule : LocalDateTime? = null,
+
+    @field:ManyToOne
+    var user : User
 
 
         ) : BaseTimeEntity()

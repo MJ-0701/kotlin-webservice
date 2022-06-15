@@ -46,10 +46,13 @@ class CustomOAuth2UserService(
 
     private fun saveOrUpdate(attributes: OAuthAttributes) : User {
 
-        userRepository.findByEmail(attributes.email).let { user ->
-            user.update(name = attributes.name, picture = attributes.picture)
-            return user
-        }
+        println("OAuth")
+        return userRepository.save(modelMapper.map(attributes, User::class.java))
+
+//        userRepository.findByEmail(attributes.email).let { user ->
+//            user.update(name = attributes.name, picture = attributes.picture)
+//            return user
+//        }
 
 //        return userRepository.save(modelMapper.map(attributes, User::class.java))
 
