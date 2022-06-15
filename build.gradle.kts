@@ -44,6 +44,10 @@ dependencies {
 
     // Model Mppper
     implementation("org.modelmapper:modelmapper:2.4.4")
+
+    //Swagger
+    implementation("io.springfox:springfox-swagger-ui:2.9.2")
+    implementation("io.springfox:springfox-swagger2:2.9.2")
 }
 
 tasks.withType<KotlinCompile> {
