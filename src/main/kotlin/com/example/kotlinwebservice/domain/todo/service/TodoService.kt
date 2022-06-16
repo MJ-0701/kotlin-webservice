@@ -22,13 +22,11 @@ class TodoService(
     fun create(todoReqDto: TodoReqDto) : TodoReqDto {
 
         val todo = Todo().apply {
-            this.user = userRepository.findByUserId(todoReqDto.userId)
+            this.user = userRepository.findById(todoReqDto.userId)
             this.description = todoReqDto.description
             this.schedule = todoReqDto.schedule
             this.title = todoReqDto.title
         }
-
-        todoRepository.save(todo)
 
         return modelMapper.map(todo, TodoReqDto::class.java)
     }

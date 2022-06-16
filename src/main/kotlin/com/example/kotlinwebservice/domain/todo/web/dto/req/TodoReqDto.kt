@@ -22,7 +22,7 @@ data class TodoReqDto(
 
     @field:JoinColumn(name = "user_id")
     @field:JsonProperty("user_id")
-    var userId : Long
+    var userId : Long? = null
 
 
 )
