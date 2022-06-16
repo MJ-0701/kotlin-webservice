@@ -4,6 +4,7 @@ import com.example.kotlinwebservice.domain.todo.entity.Todo
 import com.example.kotlinwebservice.domain.todo.entity.respository.TodoRepository
 import com.example.kotlinwebservice.domain.todo.web.dto.req.TodoReqDto
 import com.example.kotlinwebservice.domain.todo.web.dto.res.TodoResDto
+import com.example.kotlinwebservice.domain.user.entity.User
 import com.example.kotlinwebservice.domain.user.entity.repository.UserRepository
 import org.modelmapper.ModelMapper
 import org.springframework.stereotype.Service
@@ -20,17 +21,24 @@ class TodoService(
     @Transactional
     fun create(todoReqDto: TodoReqDto) : TodoReqDto {
 
-        val result = todoRepository.save(modelMapper.map(todoReqDto, Todo::class.java))
-        println("서비스 결과 :${result.toString()}")
-        return modelMapper.map(result, TodoReqDto::class.java)
+        val todo = Todo().apply {
+            this.user = userRepository.findByUserId(todoReqDto.userId)
+            this.description = todoReqDto.description
+            this.schedule = todoReqDto.schedule
+            this.title = todoReqDto.title
+        }
+
+        todoRepository.save(todo)
+
+        return modelMapper.map(todo, TodoReqDto::class.java)
     }
 
     @Transactional
     fun read(id: Long) : TodoResDto{
 
-        val result = todoRepository.findById(id)
-
-        return modelMapper.map(result, TodoResDto::class.java)
+      return todoRepository.findByUserId(id).let { // 유저의 아이디값을 넣어줘야함.
+          modelMapper.map(it, TodoResDto::class.java)
+      }
     }
 
 }

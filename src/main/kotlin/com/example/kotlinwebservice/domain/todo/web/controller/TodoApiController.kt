@@ -2,6 +2,7 @@ package com.example.kotlinwebservice.domain.todo.web.controller
 
 import com.example.kotlinwebservice.domain.todo.service.TodoService
 import com.example.kotlinwebservice.domain.todo.web.dto.req.TodoReqDto
+import com.example.kotlinwebservice.domain.todo.web.dto.res.TodoResDto
 import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController
 import javax.validation.Valid
 
 @RestController
-@RequestMapping("/api/vi/todo")
+@RequestMapping("/api/v1/todo")
 class TodoApiController(private val todoService: TodoService) {
 
 
@@ -26,17 +27,20 @@ class TodoApiController(private val todoService: TodoService) {
     }
 
     @GetMapping("/read")
-    fun read(@RequestParam id : Long?) : ResponseEntity<Any>{
-        return id?.let {
-            todoService.read(it)
-        }?.let {// 있을때
-            return ResponseEntity.ok(it)
-        }?: kotlin.run {
-            return ResponseEntity
-                .status(HttpStatus.MOVED_PERMANENTLY)
-                .header(HttpHeaders.LOCATION, "/api/todo/all")
-                .build()
-        }
+    fun read(@RequestParam id : Long) : TodoResDto{
+
+        return todoService.read(id)
+
+    //        return id?.let {
+//            todoService.read(it)
+//        }?.let {// 있을때
+//            return ResponseEntity.ok(it)
+//        }?: kotlin.run {
+//            return ResponseEntity
+//                .status(HttpStatus.MOVED_PERMANENTLY)
+////                .header(HttpHeaders.LOCATION, "/api/todo/all")
+//                .build()
+//        }
     }
 
 

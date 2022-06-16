@@ -12,7 +12,7 @@ class User  (
     @field:Id
     @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     @field:Column(insertable = false, updatable = false)
-    private val id : Long? = null,
+    val id : Long? = null,
 
     var name : String,
 
