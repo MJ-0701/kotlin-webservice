@@ -1,7 +1,11 @@
 package com.example.kotlinwebservice.domain.user.web.dto.req
 
+import com.example.kotlinwebservice.domain.todo.entity.Todo
 import com.example.kotlinwebservice.domain.user.entity.Role
+import com.example.kotlinwebservice.domain.user.entity.UserHistory
 import com.fasterxml.jackson.annotation.JsonProperty
+import javax.persistence.JoinColumn
+import javax.persistence.OneToMany
 import javax.validation.constraints.Email
 import javax.validation.constraints.Max
 import javax.validation.constraints.Min
@@ -13,10 +17,10 @@ data class UserReqDto(
     @field:Size(min = 2, max = 10)
     var name : String? = null,
 
-    @field:JsonProperty("user_id")
+    @field:JsonProperty("account")
     @field:NotBlank
     @field:Size(min = 4, max = 15)
-    var userId : String? = null,
+    var account : String? = null,
 
     @field:NotBlank
     @field:Size(min = 4, max = 15)
@@ -27,5 +31,6 @@ data class UserReqDto(
 
     var picture : String? = null,
 
-    var role : Role? = null
+    var role: Role? = null
+
 )

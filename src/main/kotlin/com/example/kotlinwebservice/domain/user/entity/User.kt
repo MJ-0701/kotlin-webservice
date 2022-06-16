@@ -17,8 +17,8 @@ class User  (
     var name : String,
 
 
-    @field:JsonProperty("user_id")
-    var userId : String,
+    @field:JsonProperty("account")
+    var account : String,
 
     var pwd : String,
 

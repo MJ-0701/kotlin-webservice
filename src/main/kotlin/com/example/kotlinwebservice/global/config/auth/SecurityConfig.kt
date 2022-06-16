@@ -16,8 +16,8 @@ class SecurityConfig(private val customOAuth2UserService: CustomOAuth2UserServic
             .and().authorizeRequests()
             .antMatchers("/", "/css/**", "/images/**","/js/**","/h2-console/**","/profile","/swagger-ui.html#/**").permitAll()
 //            .antMatchers("/api/v1/**").hasRole(Role.USER.name)
-            .anyRequest().authenticated()
-            .and().logout().logoutSuccessUrl("/")
+//            .anyRequest().authenticated()
+//            .and().logout().logoutSuccessUrl("/")
 //            .and().oauth2Login().userInfoEndpoint().userService(customOAuth2UserService) // TODO :: YML 에 설정 추가
     }
 }

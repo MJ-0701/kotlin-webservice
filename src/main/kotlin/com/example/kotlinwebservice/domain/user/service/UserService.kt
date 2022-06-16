@@ -16,13 +16,8 @@ class UserService(private val userRepository: UserRepository,
     @Transactional
     fun create(userReqDto: UserReqDto) : UserReqDto{
         val result = userRepository.save(modelMapper.map(userReqDto, User::class.java)) // jvm 대문에 자바 클래스로 설정 해 줘야함.
-        println("결과 :$result")
+        println("결과 :${result.toString()}")
         return modelMapper.map(result, UserReqDto::class.java)
-    }
-
-    @Transactional
-    fun update(user: User) : User{
-        return userRepository.save(user)
     }
 
 }
