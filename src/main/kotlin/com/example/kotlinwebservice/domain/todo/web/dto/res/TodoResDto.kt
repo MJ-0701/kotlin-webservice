@@ -10,11 +10,12 @@ import javax.validation.constraints.NotBlank
 data class TodoResDto(
 
     var title : String? = null,
+
     var description : String? = null,
-    @field:StringFormatDateTime
+
     var schedule : String? = null,
 
-    @field:JoinColumn(name = "user_id")
     @field:JsonProperty("user_id")
+    @field:JoinColumn(name = "user_id")
     var userId : Long? = null
 )

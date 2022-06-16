@@ -21,22 +21,59 @@ class TodoService(
     @Transactional
     fun create(todoReqDto: TodoReqDto) : TodoReqDto {
 
+        // 1. Client -> Controller -> DTO -> Entity -> DB
+        // 2. Entity -> DTO -> Client
+
         val todo = Todo().apply {
             this.user = userRepository.findById(todoReqDto.userId)
             this.description = todoReqDto.description
             this.schedule = todoReqDto.schedule
             this.title = todoReqDto.title
         }
+        todoRepository.save(todo)
 
-        return modelMapper.map(todo, TodoReqDto::class.java)
+        return TodoReqDto().apply {
+            this.userId = todo.user.id
+            this.schedule = todo.schedule
+            this.title = todo.title
+            this.description = todo.description
+        }
+
+        //        return modelMapper.map(todo, TodoReqDto::class.java) // Entity -> DTO
     }
 
     @Transactional
     fun read(id: Long) : TodoResDto{
 
-      return todoRepository.findByUserId(id).let { // 유저의 아이디값을 넣어줘야함.
-          modelMapper.map(it, TodoResDto::class.java)
-      }
+
+
+//        val result = todoRepository.findById(id)
+//        println("result : ${result.toString()}")
+//
+//        return modelMapper.map(result, TodoResDto::class.java)
+
+        val result =  todoRepository.findById(id)
+
+        return modelMapper.map(result, TodoResDto::class.java)
+    }
+
+    @Transactional
+    fun update(todoReqDto: TodoReqDto) : TodoReqDto {
+
+        val todo = Todo().apply {
+            this.user = userRepository.findById(todoReqDto.userId)
+            this.description = todoReqDto.description
+            this.schedule = todoReqDto.schedule
+            this.title = todoReqDto.title
+        }
+        todoRepository.save(todo)
+
+        return TodoReqDto().apply {
+            this.userId = todo.user.id
+            this.schedule = todo.schedule
+            this.title = todo.title
+            this.description = todo.description
+        }
     }
 
 }
