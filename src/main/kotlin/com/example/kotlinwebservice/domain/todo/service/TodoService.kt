@@ -91,7 +91,7 @@ class TodoService(
     @Transactional
     fun delete(id : Long){
         val todo = todoRepository.findById(id).get()
-        todoRepository.delete(todo) // 커밋용
+        todoRepository.delete(todo)
     }
 
 }

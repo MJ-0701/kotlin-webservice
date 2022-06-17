@@ -62,7 +62,7 @@ class TodoApiControllerAdvice {
             this.errors = errors
         }
 
-        return ResponseEntity.badRequest().body(errorResponse) // 커밋용
+        return ResponseEntity.badRequest().body(errorResponse) 
 
     }
 }
