@@ -21,7 +21,8 @@
 <img width="1440" alt="스크린샷 2022-06-17 오후 5 28 55" src="https://user-images.githubusercontent.com/62600560/174259293-6ffc7085-6f3d-4b02-b793-b5299ccf463c.png">
 
 ### RequestMethod.PUT
-<img width="1440" alt="스크린샷 2022-06-17 오후 5 31 58" src="https://user-images.githubusercontent.com/62600560/174260175-53875050-c321-456e-8bc7-d317da59679a.png">
+<img width="1440" alt="스크린샷 2022-06-17 오후 5 56 54" src="https://user-images.githubusercontent.com/62600560/174264797-e43e56d7-da60-4b1d-9af2-da982b24996b.png">
+
 
 <img width="1440" alt="스크린샷 2022-06-17 오후 5 32 06" src="https://user-images.githubusercontent.com/62600560/174260192-24bdb2f3-8266-4d69-a93e-c915f9513263.png">
 
