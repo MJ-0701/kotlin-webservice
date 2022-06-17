@@ -9,4 +9,13 @@
 
 <img width="1440" alt="스크린샷 2022-06-17 오후 5 08 20" src="https://user-images.githubusercontent.com/62600560/174256150-1d748131-1bb5-43f0-95d7-bc25a79d7127.png">
 
+## Rest
+### RequestMethod.POST
+<img width="1440" alt="스크린샷 2022-06-17 오후 5 20 58" src="https://user-images.githubusercontent.com/62600560/174258653-08690faf-2a9b-454f-ab73-d377f829c2d6.png">
+
+<img width="1440" alt="스크린샷 2022-06-17 오후 5 21 45" src="https://user-images.githubusercontent.com/62600560/174258674-b0e55e24-e74c-4c07-96c5-ee8a60fc5418.png">
+
+<img width="1440" alt="스크린샷 2022-06-17 오후 5 21 31" src="https://user-images.githubusercontent.com/62600560/174258699-1aaf304c-5a19-4901-9ab8-9729070d0b30.png">
+
+
 
