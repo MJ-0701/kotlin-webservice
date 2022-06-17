@@ -6,8 +6,11 @@ import com.example.kotlinwebservice.domain.todo.web.dto.res.TodoResDto
 import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -22,7 +25,6 @@ class TodoApiController(private val todoService: TodoService) {
     @PostMapping("/save")
     fun create(@Valid @RequestBody todoReqDto: TodoReqDto) : TodoReqDto{
 
-        println("컨트롤러 결과 : ${todoReqDto.toString()}")
         return todoService.create(todoReqDto)
     }
 
@@ -42,6 +44,19 @@ class TodoApiController(private val todoService: TodoService) {
 //                .build()
 //        }
     }
+
+    @PutMapping("/update")
+    fun update (reqDto: TodoReqDto) : TodoReqDto {
+        return todoService.update(reqDto)
+    }
+
+    @DeleteMapping("/delete/{id}")
+    fun delete(@PathVariable id : Long) : ResponseEntity<Any>{
+
+        return ResponseEntity.ok().body(todoService.delete(id))
+    }
+
+
 
 
 }
