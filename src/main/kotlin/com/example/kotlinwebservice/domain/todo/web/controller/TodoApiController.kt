@@ -45,6 +45,12 @@ class TodoApiController(private val todoService: TodoService) {
 //        }
     }
 
+    @GetMapping("/list")
+    fun readAll(@RequestParam id : Long) : MutableList<TodoResDto> {
+
+        return todoService.readAll(id)
+    }
+
     @PutMapping("/update")
     fun update (reqDto: TodoReqDto) : TodoReqDto {
         return todoService.update(reqDto)
