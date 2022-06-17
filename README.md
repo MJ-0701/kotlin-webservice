@@ -1,5 +1,9 @@
 # kotlin-webservice
 
+## ERD
+<img width="1440" alt="스크린샷 2022-06-17 오후 6 07 26" src="https://user-images.githubusercontent.com/62600560/174266574-5adb8fb7-fa85-45b6-a83c-9f9196719f5f.png">
+
+
 ### Exception Handler
 <img width="1440" alt="스크린샷 2022-06-17 오후 5 09 21" src="https://user-images.githubusercontent.com/62600560/174255894-4fa8a2e0-672e-4313-873b-a396ed058f31.png">
 
