@@ -1,5 +1,14 @@
 spring:
 
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
   # jpa 설정
   jpa:
     hibernate:
@@ -21,7 +30,7 @@ spring:
 #        username : sa
 
   datasource:
-    url: jdbc:mysql://localhost:3306/book_manager?useSSl=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/kotlin-webservice?useSSl=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root

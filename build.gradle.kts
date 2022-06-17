@@ -36,9 +36,23 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // DB
     runtimeOnly("com.h2database:h2")
     runtimeOnly("mysql:mysql-connector-java")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // Model Mppper
+    implementation("org.modelmapper:modelmapper:2.4.4")
+
+    //Swagger
+    implementation("io.springfox:springfox-swagger-ui:2.9.2")
+    implementation("io.springfox:springfox-swagger2:2.9.2")
+
+    // Security
+    implementation("org.springframework.boot:spring-boot-starter-oauth2-client") // 권한 관련
+    implementation("org.springframework.session:spring-session-jdbc") // 권한 관련
+    testImplementation("org.springframework.security:spring-security-test") // 권한 관련
 }
 
 tasks.withType<KotlinCompile> {
