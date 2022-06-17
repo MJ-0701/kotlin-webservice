@@ -1,6 +1,38 @@
 spring:
+
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  # jpa 설정
   jpa:
     hibernate:
       ddl-auto: 'create-drop'
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    generate-ddl: true
+#    defer-datasource-initialization: true
 
-  
+  # DB 설정
+#  h2:
+#    console:
+#      enabled: true
+#    datasource:
+#      hikari:
+#        jdbc-url: jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
+#        username : sa
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/kotlin-webservice?useSSl=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+
