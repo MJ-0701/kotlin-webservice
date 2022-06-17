@@ -17,5 +17,20 @@
 
 <img width="1440" alt="스크린샷 2022-06-17 오후 5 21 31" src="https://user-images.githubusercontent.com/62600560/174258699-1aaf304c-5a19-4901-9ab8-9729070d0b30.png">
 
+### RequestMethod.GET
+<img width="1440" alt="스크린샷 2022-06-17 오후 5 28 55" src="https://user-images.githubusercontent.com/62600560/174259293-6ffc7085-6f3d-4b02-b793-b5299ccf463c.png">
+
+### RequestMethod.PUT
+<img width="1440" alt="스크린샷 2022-06-17 오후 5 31 58" src="https://user-images.githubusercontent.com/62600560/174260175-53875050-c321-456e-8bc7-d317da59679a.png">
+
+<img width="1440" alt="스크린샷 2022-06-17 오후 5 32 06" src="https://user-images.githubusercontent.com/62600560/174260192-24bdb2f3-8266-4d69-a93e-c915f9513263.png">
+
+<img width="1440" alt="스크린샷 2022-06-17 오후 5 32 10" src="https://user-images.githubusercontent.com/62600560/174260211-c28c6f1b-05d1-41c8-9150-396dd9517a16.png">
+
+
+### RequestMethod.DELETE
+<img width="1440" alt="스크린샷 2022-06-17 오후 5 29 46" src="https://user-images.githubusercontent.com/62600560/174259506-b3c4e239-fecd-4a06-9839-cf34c083397d.png">
+
+
 
 
