@@ -86,19 +86,6 @@ class TodoService(
         todoRepository.save(todo)
 
         return modelMapper.map(todo, TodoReqDto::class.java)
-
-//        return todoReqDto.userId?.let {
-//            todoRepository.findById(it).get()
-//        }.let {
-//            todoRepository.save(it!!)
-//            TodoReqDto().apply {
-//                this.title = it.title
-//                this.description = it.description
-//                this.userId = it.user!!.id
-//                this.schedule = it.schedule
-//            }
-//        }
-
     }
 
     @Transactional
