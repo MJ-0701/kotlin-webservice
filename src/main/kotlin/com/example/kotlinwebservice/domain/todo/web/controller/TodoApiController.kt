@@ -51,9 +51,9 @@ class TodoApiController(private val todoService: TodoService) {
         return todoService.readAll(id)
     }
 
-    @PutMapping("/update")
-    fun update (reqDto: TodoReqDto) : TodoReqDto {
-        return todoService.update(reqDto)
+    @PutMapping("/update/{id}")
+    fun update (reqDto: TodoReqDto, @PathVariable id : Long) : TodoReqDto {
+        return todoService.update(reqDto, id) // 커밋용
     }
 
     @DeleteMapping("/delete/{id}")
