@@ -68,14 +68,19 @@ class TodoService(
 
         val todo = todoRepository.findAll()
         return todo.stream().map {
-            modelMapper.map(it, TodoResDto::class.java)
+            TodoResDto().apply {
+                this.title = it.title
+                this.description = it.description
+                this.schedule = it.schedule
+                this.userId = it.user.id
+            }
         }.collect(Collectors.toList())
     }
 
     @Transactional
-    fun update(todoReqDto: TodoReqDto) : TodoReqDto {
+    fun update(todoReqDto: TodoReqDto, id : Long) : TodoReqDto {
 
-        val todo = todoRepository.findByUserId(todoReqDto.userId)
+        val todo = todoRepository.findByUserIdAndId(todoReqDto.userId, id)
 
         todo.apply {
             this.schedule = todoReqDto.schedule

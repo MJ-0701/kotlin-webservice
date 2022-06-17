@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository
 
 interface TodoRepository : JpaRepository<Todo, Long>{
 
-    fun findByUserId(userId : Long?) : Todo
+    fun findByUserIdAndId(userId : Long?, id : Long?) : Todo
 }
