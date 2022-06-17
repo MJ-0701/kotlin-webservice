@@ -3,6 +3,7 @@ package com.example.kotlinwebservice.domain.todo.handler
 import com.example.kotlinwebservice.domain.todo.web.controller.TodoApiController
 import com.example.kotlinwebservice.global.web.dto.res.ErrorField
 import com.example.kotlinwebservice.global.web.dto.res.ErrorResponse
+import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.FieldError
@@ -36,6 +37,26 @@ class TodoApiControllerAdvice {
             this.httpStatus = HttpStatus.BAD_REQUEST.value().toString()
             this.httpMethod = request.method
             this.message = ""
+            this.path = request.requestURI
+            this.timestamp = LocalDateTime.now()
+            this.errors = errors
+        }
+
+        return ResponseEntity.badRequest().body(errorResponse)
+
+    }
+
+
+    @ExceptionHandler(EmptyResultDataAccessException::class)
+    fun emptyResultDataAccessException( request : HttpServletRequest): ResponseEntity<ErrorResponse> {
+
+        val errors = mutableListOf<ErrorField>()
+
+        val errorResponse = ErrorResponse().apply {
+            this.resultCode = "FAIL"
+            this.httpStatus = HttpStatus.INTERNAL_SERVER_ERROR.value().toString()
+            this.httpMethod = request.method
+            this.message = "user_id 값을 확인해 주세요."
             this.path = request.requestURI
             this.timestamp = LocalDateTime.now()
             this.errors = errors
