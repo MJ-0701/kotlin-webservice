@@ -65,17 +65,15 @@ class TodoService(
     @Transactional
     fun update(todoReqDto: TodoReqDto) : TodoReqDto {
 
-        val todo = Todo().apply {
-            this.description = todoReqDto.description
-            this.schedule = todoReqDto.schedule
-            this.title = todoReqDto.title
-        }
-        todoRepository.save(todo)
-
-        return TodoReqDto().apply {
-            this.schedule = todo.schedule
-            this.title = todo.title
-            this.description = todo.description
+        return todoReqDto.userId?.let {
+            todoRepository.findById(it).get()
+        }.let {
+            TodoReqDto().apply {
+                this.title = it?.title
+                this.description = it?.description
+                this.userId = it?.user!!.id
+                this.schedule = it.schedule
+            }
         }
     }
 
