@@ -23,6 +23,8 @@ class TodoService(
         // 1. Client -> Controller -> DTO -> Entity -> DB
         // 2. Entity -> DTO -> Client
 
+
+
         val todo = Todo().apply {
             this.user = userRepository.findById(todoReqDto.userId)
             this.description = todoReqDto.description
@@ -38,7 +40,7 @@ class TodoService(
             this.description = todo.description
         } // 커밋용
 
-        //        return modelMapper.map(todo, TodoReqDto::class.java) // Entity -> DTO
+//                return modelMapper.map(todo, TodoReqDto::class.java) // Entity -> DTO
     }
 
     @Transactional
@@ -64,7 +66,26 @@ class TodoService(
     }
 
     @Transactional(readOnly = true)
-    fun readAll(id : Long) : MutableList<TodoResDto> {
+    fun userList(id : Long?) : MutableList<TodoResDto> {
+
+       val userList = todoRepository.findByUserId(id)
+       return userList.stream().map {
+           TodoResDto().apply {
+               this.title = it.title
+               this.description = it.description
+               this.schedule = it.schedule
+               this.userId = it.user.id
+           }
+       }.collect(Collectors.toList())
+
+
+    }
+
+    @Transactional(readOnly = true)
+    fun readAll(id : Long?) : MutableList<TodoResDto> {
+
+//        val user = userRepository.findById(id)
+//        val todo = todoRepository.findByUserId(user.id)
 
         val todo = todoRepository.findAll()
         return todo.stream().map {
