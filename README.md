@@ -22,8 +22,16 @@
 <img width="1440" alt="스크린샷 2022-06-17 오후 5 21 31" src="https://user-images.githubusercontent.com/62600560/174258699-1aaf304c-5a19-4901-9ab8-9729070d0b30.png">
 
 ### RequestMethod.GET
-<img width="1440" alt="스크린샷 2022-06-17 오후 6 13 32" src="https://user-images.githubusercontent.com/62600560/174267683-8924d17f-1e9b-4a40-9ce0-e22f5321a4eb.png">
+<img width="1022" alt="스크린샷 2022-06-20 오후 3 09 00" src="https://user-images.githubusercontent.com/62600560/174536166-2150fed3-4ecf-4bd7-b605-3932bd46a42d.png">
 
+<img width="1440" alt="스크린샷 2022-06-20 오후 3 08 10" src="https://user-images.githubusercontent.com/62600560/174536195-6a28bcda-1764-4110-8471-021f5cc05194.png">
+
+<img width="1440" alt="스크린샷 2022-06-20 오후 3 08 24" src="https://user-images.githubusercontent.com/62600560/174536202-b218f9ca-3d52-4bfb-a05a-214034f53cb1.png">
+
+<img width="1008" alt="스크린샷 2022-06-20 오후 3 07 48" src="https://user-images.githubusercontent.com/62600560/174536233-c8ac4d0a-6818-4be3-a890-35a715297341.png">
+
+
+<img width="1440" alt="스크린샷 2022-06-17 오후 6 13 32" src="https://user-images.githubusercontent.com/62600560/174267683-8924d17f-1e9b-4a40-9ce0-e22f5321a4eb.png">
 
 ### RequestMethod.PUT
 <img width="1440" alt="스크린샷 2022-06-17 오후 6 21 24" src="https://user-images.githubusercontent.com/62600560/174269373-0c1c8ab3-7b27-4862-b682-112c07398957.png">
@@ -31,9 +39,6 @@
 <img width="1440" alt="스크린샷 2022-06-17 오후 6 21 29" src="https://user-images.githubusercontent.com/62600560/174269387-ad2081fc-2487-4338-91ba-63dd70a2fd1f.png">
 
 <img width="1440" alt="스크린샷 2022-06-17 오후 6 33 03" src="https://user-images.githubusercontent.com/62600560/174271521-67d63a22-c196-495e-a592-211b41ea25c6.png">
-
-
-
 
 ### RequestMethod.DELETE
 <img width="1440" alt="스크린샷 2022-06-17 오후 5 29 46" src="https://user-images.githubusercontent.com/62600560/174259506-b3c4e239-fecd-4a06-9839-cf34c083397d.png">
