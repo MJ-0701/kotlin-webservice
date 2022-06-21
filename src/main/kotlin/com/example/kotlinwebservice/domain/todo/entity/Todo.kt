@@ -24,6 +24,6 @@ class Todo (
     user : User? = null
     ) : BaseTimeEntity(){
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     lateinit var user : User
     }

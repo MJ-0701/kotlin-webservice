@@ -82,7 +82,7 @@ class TodoService(
     }
 
     @Transactional(readOnly = true)
-    fun readAll(id : Long?) : MutableList<TodoResDto> {
+    fun readAll() : MutableList<TodoResDto> {
 
 //        val user = userRepository.findById(id)
 //        val todo = todoRepository.findByUserId(user.id)
