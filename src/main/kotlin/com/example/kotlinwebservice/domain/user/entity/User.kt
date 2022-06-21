@@ -34,7 +34,7 @@ class User  (
     @field:OneToMany
     var userHistory: MutableList<UserHistory>,
 
-    @field:OneToMany(fetch = FetchType.EAGER)
+    @field:OneToMany(fetch = FetchType.LAZY)
     var todo : MutableList<Todo>
 
 ) : BaseTimeEntity()
