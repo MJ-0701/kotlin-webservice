@@ -9,6 +9,8 @@ interface UserRepository : JpaRepository<User,Long> {
 
     fun findById(id : Long?) : User
 
+    fun findByName(name : String?) : User
+
 
 
 
