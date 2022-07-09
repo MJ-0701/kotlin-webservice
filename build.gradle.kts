@@ -53,6 +53,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client") // 권한 관련
     implementation("org.springframework.session:spring-session-jdbc") // 권한 관련
     testImplementation("org.springframework.security:spring-security-test") // 권한 관련
+
+    // jwt
+    implementation("com.auth0:java-jwt:3.19.2")
 }
 
 tasks.withType<KotlinCompile> {
