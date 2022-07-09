@@ -34,17 +34,17 @@ class User  (
     @field:OneToMany
     var userHistory: MutableList<UserHistory>,
 
-    @field:OneToMany
+    @field:OneToMany(fetch = FetchType.LAZY)
     var todo : MutableList<Todo>
 
 ) : BaseTimeEntity()
 {
-    fun update(name : String, picture : String) : User{
-        this.name = name
-        this.picture = picture
-
-        return this
-    }
+//    fun update(name : String, picture : String) : User{
+//        this.name = name
+//        this.picture = picture
+//
+//        return this
+//    }
 
     fun getRoleKey() : String = this.role.key
 }
