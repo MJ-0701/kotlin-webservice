@@ -36,6 +36,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.projectlombok:lombok:1.18.22")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // DB
@@ -56,6 +57,10 @@ dependencies {
 
     // jwt
     implementation("com.auth0:java-jwt:3.19.2")
+
+    // lombok
+    compileOnly ("org.projectlombok:lombok")
+    annotationProcessor ("org.projectlombok:lombok")
 }
 
 tasks.withType<KotlinCompile> {

@@ -37,6 +37,8 @@ class User  (
     @field:OneToMany(fetch = FetchType.LAZY)
     var todo : MutableList<Todo>
 
+    var authorities : Set<UserAuthority>
+
 ) : BaseTimeEntity()
 {
 //    fun update(name : String, picture : String) : User{

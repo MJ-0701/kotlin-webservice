@@ -20,4 +20,10 @@ class UserService(private val userRepository: UserRepository,
         return modelMapper.map(result, UserReqDto::class.java)
     }
 
+    @Transactional(readOnly = true)
+    fun findByName(name : String?) : User{
+        return userRepository.findByName(name)
+    }
+
+
 }
