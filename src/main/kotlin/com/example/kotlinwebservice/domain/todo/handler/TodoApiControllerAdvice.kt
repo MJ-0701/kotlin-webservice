@@ -39,7 +39,7 @@ class TodoApiControllerAdvice {
             this.message = ""
             this.path = request.requestURI
             this.timestamp = LocalDateTime.now()
-            this.errors = errors
+            this.errors = errors // 커밋용
         }
 
         return ResponseEntity.badRequest().body(errorResponse)
